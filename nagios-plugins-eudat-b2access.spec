@@ -46,6 +46,7 @@ Nagios probes to check functionality of B2ACCESS Service
 
 install -d %{buildroot}/%{_libexecdir}/argo-monitoring/probes/%{probe_namespace}
 install -m 755 check_b2access.py %{buildroot}/%{_libexecdir}/argo-monitoring/probes/%{probe_namespace}/check_b2access.py
+install -m 755 check_b2access_simple.py %{buildroot}/%{_libexecdir}/argo-monitoring/probes/%{probe_namespace}/check_b2access_simple.py
 
 %files
 %dir /%{_libexecdir}/argo-monitoring
@@ -53,6 +54,7 @@ install -m 755 check_b2access.py %{buildroot}/%{_libexecdir}/argo-monitoring/pro
 %dir /%{_libexecdir}/argo-monitoring/probes/%{probe_namespace}
 
 %attr(0755,root,root) /%{_libexecdir}/argo-monitoring/probes/%{probe_namespace}/check_b2access.py
+%attr(0755,root,root) /%{_libexecdir}/argo-monitoring/probes/%{probe_namespace}/check_b2access_simple.py
 
 %changelog
 * Tue Jun 05 2018 Shiraz Memon <a.memon@fz-juelich.de> - 0.4-1
