@@ -31,6 +31,7 @@ Requires:	python-simplejson
 Requires:	python-defusedxml
 Requires:	python-httplib2
 Requires:	python-requests
+Requires:	python-pip
 
 
 %description
@@ -47,6 +48,12 @@ Nagios probes to check functionality of B2ACCESS Service
 install -d %{buildroot}/%{_libexecdir}/argo-monitoring/probes/%{probe_namespace}
 install -m 755 check_b2access.py %{buildroot}/%{_libexecdir}/argo-monitoring/probes/%{probe_namespace}/check_b2access.py
 install -m 755 check_b2access_simple.py %{buildroot}/%{_libexecdir}/argo-monitoring/probes/%{probe_namespace}/check_b2access_simple.py
+
+%post
+pip install oauthlib requests_oauthlib validators
+pip install validators
+pip install requests_oauthlib
+
 
 %files
 %dir /%{_libexecdir}/argo-monitoring
